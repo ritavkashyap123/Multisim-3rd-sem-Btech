@@ -1,0 +1,52 @@
+clc;
+close all;
+clear all;
+t= -1:0.01:10;
+U1(t>=0) = 1;
+U1(t<0) =0;
+subplot(3,3,1);
+plot(t,U1); %....plotting signal u(t)
+title('Unit Signal-1');
+xlabel('----------- t --------->')
+ylabel('--u(t)-->')
+U2(t>=4) = 1;
+U2(t<4) =0;
+subplot(3,3,2);
+plot(t,U2); %....plotting signal u(t-4) 
+title('Unit Signal-2')
+xlabel('----------- t --------->')
+ylabel('--u(t-4)-->')
+U3(t>=5) = 1;
+U3(t<5) =0;
+subplot(3,3,3);
+plot(t,U3); %....plotting signal u(t-5)
+title('Unit Signal-3')
+xlabel('----------- t --------->')
+ylabel('--u(t-5)-->')
+R1 =( (t-1).*1);
+R1(t<=1) = 0;
+subplot(3,3,4);
+plot(t,R1); %....plotting signal r(t-1)
+title('Ramp Signal-1')
+xlabel('----------- t --------->')
+ylabel('--r(t-1)-->')
+R2 =( (t-2).*1);
+R2(t<=2) = 0;
+subplot(3,3,5);
+plot(t,R2); %....plotting signal r(t-2)
+title('Ramp Signal-2')
+xlabel('----------- t --------->')
+ylabel('--r(t-2)-->')
+R3 =( (t-3).*1);
+R3(t<=3) = 0;
+subplot(3,3,6);
+plot(t,R3); %....plotting signal r(t-3)
+title('Ramp Signal-3')
+xlabel('----------- t --------->')
+ylabel('--r(t-3)-->')
+Y1 = (U1)-(R1)+( 2*R2)-(R3)+(U2)-(2*U3);
+subplot(3,3,8)
+plot(t,Y1)
+title('Final Signal')
+xlabel('----------- t --------->')
+ylabel('--x(t)-->')

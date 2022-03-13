@@ -1,0 +1,37 @@
+clc;
+clear all;
+close all;
+% x(t)=exp(2*t) <------- signal
+t=-4:0.001:4;
+x1=exp(2*t);
+x2=exp(-2*t);
+if(x2==x1)
+ disp('the signal is even');
+else if(x2==(-x1))
+ disp('the signal is odd'); 
+ else
+ disp('the signal is neither even nor odd');
+ end
+end
+xe=(x1+x2)/2;
+xo=(x1-x2)/2;
+subplot(2,2,1);plot(t,x1);
+xlabel('----------t-------->');
+ylabel('----------x1(t)----->');
+title('signal x(t)');
+axis([-3 3 -200 400]);
+subplot(2,2,2);plot(t,x2);
+xlabel('----------t-------->');
+ylabel('----------x2(t)----->');
+title('signal x(-t)');
+axis([-3 3 -200 400]);
+subplot(2,2,3);plot(t,xe);
+xlabel('----------t-------->');
+ylabel('----------xe(t)----->');
+title('even part of x(t)');
+axis([-3 3 -200 400]);
+subplot(2,2,4);plot(t,xo);
+xlabel('----------t-------->');
+ylabel('----------xo(t)----->');
+title('odd part of x(t)');
+axis([-3 3 -200 400]);

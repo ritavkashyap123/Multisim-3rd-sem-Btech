@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all
+t=-5:0.001:5;
+a=1;
+f=0.8;
+xt=a*sin(2*pi*f*t)
+plot(t,xt)
+title('Sine Function');
+xlabel('----------time-------->');
+ylabel('----------signal------->');

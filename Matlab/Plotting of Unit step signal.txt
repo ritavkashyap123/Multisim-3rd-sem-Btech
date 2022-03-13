@@ -1,0 +1,11 @@
+clc
+clear all
+close all
+t = -10:0.01:10
+u(t>=0)= 1;
+u(t<0)=0;
+plot(t,u);
+title('unit step signal');
+xlabel('-------t--------->');
+ylabel('-------u(t)------>');
+axis([-9 9 -1 2 ])

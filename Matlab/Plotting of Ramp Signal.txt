@@ -1,0 +1,10 @@
+clc;
+clear all;
+close all;
+t=-5:0.0001:5;
+r=((t).*1);
+r(t<=0)=0;
+plot(t,r);
+xlabel('----------time-------->');
+ylabel('----------r(t)-------->');
+title('Ramp signal');

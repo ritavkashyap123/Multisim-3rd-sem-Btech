@@ -1,0 +1,48 @@
+clc;
+clear all;
+close all;
+t=-4:0.01:4;
+lt=length(t);
+x=zeros(1,lt);
+for i=1:lt
+ if((t(i)<=0.5)&&(t(i)>=-0.5))
+ x(i)=t(i)+0.5;
+ end;
+ if((t(i)<=1.5)&&(t(i)>=0.5))
+ x(i)=1.5-t(i);
+ end;
+ subplot(3,2,1)
+ plot(t,x)
+ axis([-5 5 -0.5 2])
+ title('given signal');
+ xlabel('-------time------>');
+ ylabel('--x(t)--->')
+ 
+ subplot(3,2,3)
+ plot(t+2,x)
+ axis([-5 5 -0.5 2])
+ title('time avdanced signal');
+ xlabel('-------time------>');
+ ylabel('--x(t+2)--->')
+ 
+ subplot(3,2,4)
+ plot(t-2,x)
+ axis([-5 5 -0.5 2])
+ title('time delayed signal');
+ xlabel('-------time------>');
+ ylabel('--x(t-2)--->')
+ 
+ subplot(3,2,5)
+ plot(2*t,x)
+ axis([-5 5 -0.5 2])
+ title('time expanded signal');
+ xlabel('-------time------>');
+ ylabel('--x(2t)--->')
+ 
+ subplot(3,2,6)
+ plot(0.5*t,x)
+ axis([-5 5 -0.5 2])
+ title('time compressed signal');
+ xlabel('-------time------>');
+ ylabel('--x(0.5t)--->')
+end;

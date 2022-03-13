@@ -1,0 +1,54 @@
+%on the signal x(t)=1.0+t; for t= 0 to 2
+function x=y(t) %this program is saved as a separate
+ %file in work directory and the
+%signal x(t) is declared as 
+%function y(t)
+x=(1 + t).*(t>=0 & t<=2);
+clc;
+clear all;
+close all;
+t=-3:0.2:5;
+y0=y(t);
+y1=1.5*y(t);
+y2=0.5*y(t);
+y3=y(2*t);
+y4=y(0.5*t);
+y5=y(t-2);
+y6=y(t+2);
+figure(1)
+plot(t,y0);
+axis([-3 5 0 5]);
+xlabel('-----------t--------->');
+ylabel('--x(t)-->')
+title('Signal x(t)')
+figure(2)
+subplot(3,2,1);plot(t,y1);
+axis([-3 5 0 5]);
+xlabel('-----------t--------->');
+ylabel('--x1(t)-->')
+title('Amplified signal')
+subplot(3,2,2);plot(t,y2);
+axis([-3 5 0 5]);
+xlabel('-----------t--------->');
+ylabel('--x2(t)-->')
+title('Attenuated signal 0.5 *(t)')
+subplot(3,2,3);plot(t,y3);
+axis([-3 5 0 5]);
+xlabel('-----------t--------->');
+ylabel('--x3(t)-->')
+title('time compression signal x(2t)')
+subplot(3,2,4);plot(t,y4);
+axis([-3 5 0 5]);
+xlabel('-----------t--------->');
+ylabel('--x4(t)-->')
+title('time expansion signal x(0.5t)')
+subplot(3,2,5);plot(t,y5);
+axis([-3 5 0 5]);
+xlabel('-----------t--------->');
+ylabel('--x5(t)-->')
+title('Delayed signal x(t-2)')
+subplot(3,2,6);plot(t,y6);
+axis([-3 5 0 5]);
+xlabel('-----------t--------->');
+ylabel('--x6(t)-->')
+title('Advanced signal x(t+2)')

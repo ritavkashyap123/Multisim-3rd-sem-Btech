@@ -1,0 +1,28 @@
+% signals---> x1(t)=1 ; 1<t<0
+% x2(t)=1 ; 2<t<10
+clc;
+clear all;
+close all;
+t=0:0.01:10;
+x1=1.*(t>=1 & t<=10);
+x2=1.*(t>=2 & t<=10);
+x3= conv(x1,x2);
+n3=length(x3);
+t1=0:1:n3-1;
+subplot(3,1,1);
+plot(t,x1);
+xlabel('-------t-------->');
+ylabel('----x1(t)---->');
+title('signal x1(t)');
+axis([0 10 -1 2])
+subplot(3,1,2);
+plot(t,x2);
+xlabel('-------t-------->');
+ylabel('----x2(t)---->');
+title('signal x2(t)');
+axis([0 10 -1 2])
+subplot(3,1,3);
+plot(t1,x3); xlim([0 600]);
+xlabel('-------t/dt-------->');
+ylabel('----x3(t)/dt---->');
+title('convoluted signal x3(t)');

@@ -1,0 +1,45 @@
+clc;
+clear all;
+close all;
+n=-15115;
+y1=[zeros(1,15),ones(1,16)];
+subplot(5,1,1);
+stem(n,y1);
+title('u[n] vs n')
+xlabel('-----------n---------')
+ylabel('---u[n]--')
+y2=[zeros(1,25),ones(1,6)];
+subplot(5,1,2);
+stem(n,y2);
+title('u[n-10] vs n')
+xlabel('-----------n---------')
+ylabel('--u[n-10]---')
+y=y1-y2;
+subplot(5,1,3);
+stem(n,y);
+title('y[n] vs n')
+xlabel('-----------n---------')
+ylabel('--y[n]---')
+x=fliplr(y);
+if y==x
+ disp('function is even');
+else if y==(-x)
+ disp('function is odd');
+ else
+ disp('function is neither odd nor even');
+ end
+end
+ 
+e=(y+x)0.5;
+subplot(5,1,4);
+
+stem(n,e);
+title('even component');
+xlabel('-----------n---------')
+ylabel('---ye[n]---')
+o=(y-x)0.5;
+subplot(5,1,5);
+stem(n,o);
+title('odd component');
+xlabel('-----------n---------')
+ylabel('--yo[n]---')
